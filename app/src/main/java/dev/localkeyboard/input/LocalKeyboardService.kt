@@ -3,6 +3,7 @@ package dev.localkeyboard.input
 import android.inputmethodservice.InputMethodService
 import android.os.Build
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.ExtractedTextRequest
 import android.view.inputmethod.InputConnection
@@ -18,7 +19,9 @@ class LocalKeyboardService : InputMethodService(), KeyboardView.Callbacks {
 
     override fun onCreateInputView(): View {
         keyboard = KeyboardView(this, this)
-        keyboard.minimumHeight = 320
+        val height = (300f * resources.displayMetrics.density).toInt()
+        keyboard.minimumHeight = height
+        keyboard.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height)
         keyboard.render(state)
         return keyboard
     }

@@ -9,6 +9,7 @@ import android.graphics.RectF
 import android.graphics.Shader
 import android.view.MotionEvent
 import android.view.View
+import android.view.View.MeasureSpec
 import kotlin.math.max
 
 class KeyboardView(context: Context, private val callbacks: Callbacks) : View(context) {
@@ -31,6 +32,17 @@ class KeyboardView(context: Context, private val callbacks: Callbacks) : View(co
     private val katakana = listOf("ア", "カ", "サ", "タ", "ナ", "ハ", "マ", "ヤ", "ラ", "ワ")
 
     fun render(newState: KeyboardState) { state = newState; invalidate() }
+
+    override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
+        val width = MeasureSpec.getSize(widthMeasureSpec)
+        val desiredHeight = (300f * resources.displayMetrics.density).toInt()
+        val height = when (MeasureSpec.getMode(heightMeasureSpec)) {
+            MeasureSpec.EXACTLY -> MeasureSpec.getSize(heightMeasureSpec)
+            MeasureSpec.AT_MOST -> minOf(MeasureSpec.getSize(heightMeasureSpec), desiredHeight).coerceAtLeast(desiredHeight)
+            else -> desiredHeight
+        }
+        setMeasuredDimension(width, height)
+    }
 
     override fun onDraw(canvas: Canvas) {
         super.onDraw(canvas)
