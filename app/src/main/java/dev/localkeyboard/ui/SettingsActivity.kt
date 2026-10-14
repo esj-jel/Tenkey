@@ -12,6 +12,7 @@ import android.widget.LinearLayout
 import android.widget.ScrollView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.color.DynamicColors
 import dev.localkeyboard.core.KeyboardPreferences
 import dev.localkeyboard.core.LanguageCatalog
 import dev.localkeyboard.core.UserFontStore
@@ -22,14 +23,16 @@ class SettingsActivity : AppCompatActivity() {
     private val fontStore by lazy { UserFontStore(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        DynamicColors.applyToActivityIfAvailable(this)
         super.onCreate(savedInstanceState)
         val root = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL; setPadding(28, 28, 28, 28) }
-        root.addView(TextView(this).apply { text = "Tenkey"; textSize = 30f; setTextColor(Color.rgb(45, 38, 55)) })
-        root.addView(TextView(this).apply { text = "A private, playful Japanese-first keyboard inspired by Florisboard."; textSize = 16f; setPadding(0, 12, 0, 20) })
+        root.addView(TextView(this).apply { text = "Kotoba Grammar"; textSize = 30f; setTextColor(Color.rgb(45, 38, 55)) })
+        root.addView(TextView(this).apply { text = "Offline-first language learning and the Tenkey Japanese keyboard."; textSize = 16f; setPadding(0, 12, 0, 20) })
+        root.addView(button("Open daily grammar lesson") { startActivity(Intent(this, GrammarActivity::class.java)) })
         root.addView(button("Enable keyboard") { startActivity(Intent(Settings.ACTION_INPUT_METHOD_SETTINGS)) })
         root.addView(button("Choose keyboard") { (getSystemService(INPUT_METHOD_SERVICE) as android.view.inputmethod.InputMethodManager).showInputMethodPicker() })
         root.addView(button("Custom keyboard studio") { startActivity(Intent(this, KeyboardBuilderActivity::class.java)) })
-        root.addView(button("How to use Tenkey") { startActivity(Intent(this, TutorialActivity::class.java)) })
+        root.addView(button("How to use Kotoba") { startActivity(Intent(this, TutorialActivity::class.java)) })
         root.addView(button("Import your font") { chooseFont() })
         root.addView(CheckBox(this).apply { text = "Haptic key feedback"; isChecked = preferences.haptics; setOnCheckedChangeListener { _, checked -> preferences.haptics = checked } })
         root.addView(CheckBox(this).apply { text = "Key sounds"; isChecked = preferences.keySound; setOnCheckedChangeListener { _, checked -> preferences.keySound = checked } })

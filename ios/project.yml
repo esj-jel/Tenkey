@@ -1,0 +1,56 @@
+name: Kotoba
+options:
+  bundleIdPrefix: dev.tenkey.kotoba
+  deploymentTarget:
+    iOS: "16.0"
+settings:
+  base:
+    SWIFT_VERSION: 5.9
+    IPHONEOS_DEPLOYMENT_TARGET: 16.0
+    TARGETED_DEVICE_FAMILY: "1,2"
+targets:
+  KotobaGrammar:
+    type: application
+    platform: iOS
+    sources:
+      - path: KotobaGrammar
+      - path: ../shared/LessonCatalog.swift
+      - path: ../shared/LanguageCatalog.swift
+      - path: ../shared/languages.json
+        buildPhase: resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.tenkey.kotoba.grammar
+        PRODUCT_NAME: KotobaGrammar
+        INFOPLIST_FILE: KotobaGrammar/Info.plist
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_EMIT_LOC_STRINGS: YES
+  KotobaWidget:
+    type: application
+    platform: iOS
+    sources:
+      - path: KotobaWidgetApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.tenkey.kotoba.widget
+        PRODUCT_NAME: KotobaWidget
+        INFOPLIST_FILE: KotobaWidgetApp/Info.plist
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_ENTITLEMENTS: KotobaWidgetApp/KotobaWidgetApp.entitlements
+    dependencies:
+      - target: DailyLockWidget
+        embed: true
+  DailyLockWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - path: DailyLockWidget
+      - path: ../shared/LessonCatalog.swift
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: dev.tenkey.kotoba.widget.lock
+        PRODUCT_NAME: DailyLockWidget
+        INFOPLIST_FILE: DailyLockWidget/Info.plist
+        GENERATE_INFOPLIST_FILE: YES
+        APPLICATION_EXTENSION_API_ONLY: YES
+        CODE_SIGN_ENTITLEMENTS: DailyLockWidget/DailyLockWidget.entitlements

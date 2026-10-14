@@ -1,0 +1,446 @@
+[
+  {
+    "tag": "ja",
+    "displayName": "日本語"
+  },
+  {
+    "tag": "en",
+    "displayName": "English"
+  },
+  {
+    "tag": "ar",
+    "displayName": "العربية"
+  },
+  {
+    "tag": "sv",
+    "displayName": "Svenska"
+  },
+  {
+    "tag": "af",
+    "displayName": "Afrikaans"
+  },
+  {
+    "tag": "am",
+    "displayName": "አማርኛ"
+  },
+  {
+    "tag": "az",
+    "displayName": "Azərbaycanca"
+  },
+  {
+    "tag": "be",
+    "displayName": "Беларуская"
+  },
+  {
+    "tag": "bg",
+    "displayName": "Български"
+  },
+  {
+    "tag": "bn",
+    "displayName": "বাংলা"
+  },
+  {
+    "tag": "bs",
+    "displayName": "Bosanski"
+  },
+  {
+    "tag": "ca",
+    "displayName": "Català"
+  },
+  {
+    "tag": "cs",
+    "displayName": "Čeština"
+  },
+  {
+    "tag": "cy",
+    "displayName": "Cymraeg"
+  },
+  {
+    "tag": "da",
+    "displayName": "Dansk"
+  },
+  {
+    "tag": "de",
+    "displayName": "Deutsch"
+  },
+  {
+    "tag": "el",
+    "displayName": "Ελληνικά"
+  },
+  {
+    "tag": "es",
+    "displayName": "Español"
+  },
+  {
+    "tag": "et",
+    "displayName": "Eesti"
+  },
+  {
+    "tag": "eu",
+    "displayName": "Euskara"
+  },
+  {
+    "tag": "fa",
+    "displayName": "فارسی"
+  },
+  {
+    "tag": "fi",
+    "displayName": "Suomi"
+  },
+  {
+    "tag": "fil",
+    "displayName": "Filipino"
+  },
+  {
+    "tag": "fr",
+    "displayName": "Français"
+  },
+  {
+    "tag": "ga",
+    "displayName": "Gaeilge"
+  },
+  {
+    "tag": "gl",
+    "displayName": "Galego"
+  },
+  {
+    "tag": "gu",
+    "displayName": "ગુજરાતી"
+  },
+  {
+    "tag": "he",
+    "displayName": "עברית"
+  },
+  {
+    "tag": "hi",
+    "displayName": "हिन्दी"
+  },
+  {
+    "tag": "hr",
+    "displayName": "Hrvatski"
+  },
+  {
+    "tag": "hu",
+    "displayName": "Magyar"
+  },
+  {
+    "tag": "hy",
+    "displayName": "Հայերեն"
+  },
+  {
+    "tag": "id",
+    "displayName": "Bahasa Indonesia"
+  },
+  {
+    "tag": "is",
+    "displayName": "Íslenska"
+  },
+  {
+    "tag": "it",
+    "displayName": "Italiano"
+  },
+  {
+    "tag": "ka",
+    "displayName": "ქართული"
+  },
+  {
+    "tag": "kk",
+    "displayName": "Қазақша"
+  },
+  {
+    "tag": "km",
+    "displayName": "ខ្មែរ"
+  },
+  {
+    "tag": "kn",
+    "displayName": "ಕನ್ನಡ"
+  },
+  {
+    "tag": "ko",
+    "displayName": "한국어"
+  },
+  {
+    "tag": "lo",
+    "displayName": "ລາວ"
+  },
+  {
+    "tag": "lt",
+    "displayName": "Lietuvių"
+  },
+  {
+    "tag": "lv",
+    "displayName": "Latviešu"
+  },
+  {
+    "tag": "mk",
+    "displayName": "Македонски"
+  },
+  {
+    "tag": "ml",
+    "displayName": "മലയാളം"
+  },
+  {
+    "tag": "mn",
+    "displayName": "Монгол"
+  },
+  {
+    "tag": "mr",
+    "displayName": "मराठी"
+  },
+  {
+    "tag": "ms",
+    "displayName": "Bahasa Melayu"
+  },
+  {
+    "tag": "nb",
+    "displayName": "Norsk Bokmål"
+  },
+  {
+    "tag": "ne",
+    "displayName": "नेपाली"
+  },
+  {
+    "tag": "nl",
+    "displayName": "Nederlands"
+  },
+  {
+    "tag": "pl",
+    "displayName": "Polski"
+  },
+  {
+    "tag": "pt",
+    "displayName": "Português"
+  },
+  {
+    "tag": "ro",
+    "displayName": "Română"
+  },
+  {
+    "tag": "ru",
+    "displayName": "Русский"
+  },
+  {
+    "tag": "zh-Hans",
+    "displayName": "简体中文"
+  },
+  {
+    "tag": "zh-Hant",
+    "displayName": "繁體中文"
+  },
+  {
+    "tag": "yue",
+    "displayName": "粵語"
+  },
+  {
+    "tag": "sq",
+    "displayName": "Shqip"
+  },
+  {
+    "tag": "ur",
+    "displayName": "اردو"
+  },
+  {
+    "tag": "ta",
+    "displayName": "தமிழ்"
+  },
+  {
+    "tag": "te",
+    "displayName": "తెలుగు"
+  },
+  {
+    "tag": "th",
+    "displayName": "ไทย"
+  },
+  {
+    "tag": "tr",
+    "displayName": "Türkçe"
+  },
+  {
+    "tag": "uk",
+    "displayName": "Українська"
+  },
+  {
+    "tag": "uz",
+    "displayName": "Oʻzbekcha"
+  },
+  {
+    "tag": "vi",
+    "displayName": "Tiếng Việt"
+  },
+  {
+    "tag": "zu",
+    "displayName": "isiZulu"
+  },
+  {
+    "tag": "xh",
+    "displayName": "isiXhosa"
+  },
+  {
+    "tag": "yo",
+    "displayName": "Yorùbá"
+  },
+  {
+    "tag": "ig",
+    "displayName": "Asụsụ Igbo"
+  },
+  {
+    "tag": "ha",
+    "displayName": "Hausa"
+  },
+  {
+    "tag": "sw",
+    "displayName": "Kiswahili"
+  },
+  {
+    "tag": "so",
+    "displayName": "Soomaali"
+  },
+  {
+    "tag": "ps",
+    "displayName": "پښتو"
+  },
+  {
+    "tag": "pa",
+    "displayName": "ਪੰਜਾਬੀ"
+  },
+  {
+    "tag": "or",
+    "displayName": "ଓଡ଼ିଆ"
+  },
+  {
+    "tag": "my",
+    "displayName": "မြန်မာ"
+  },
+  {
+    "tag": "si",
+    "displayName": "සිංහල"
+  },
+  {
+    "tag": "sd",
+    "displayName": "سنڌي"
+  },
+  {
+    "tag": "ku",
+    "displayName": "Kurdî"
+  },
+  {
+    "tag": "ckb",
+    "displayName": "کوردیی ناوەندی"
+  },
+  {
+    "tag": "tg",
+    "displayName": "Тоҷикӣ"
+  },
+  {
+    "tag": "tk",
+    "displayName": "Türkmençe"
+  },
+  {
+    "tag": "ky",
+    "displayName": "Кыргызча"
+  },
+  {
+    "tag": "bo",
+    "displayName": "བོད་སྐད་"
+  },
+  {
+    "tag": "dz",
+    "displayName": "རྫོང་ཁ"
+  },
+  {
+    "tag": "jv",
+    "displayName": "Basa Jawa"
+  },
+  {
+    "tag": "su",
+    "displayName": "Basa Sunda"
+  },
+  {
+    "tag": "ceb",
+    "displayName": "Sinugboanong Binisaya"
+  },
+  {
+    "tag": "haw",
+    "displayName": "ʻŌlelo Hawaiʻi"
+  },
+  {
+    "tag": "mi",
+    "displayName": "Māori"
+  },
+  {
+    "tag": "sm",
+    "displayName": "Gagana Samoa"
+  },
+  {
+    "tag": "to",
+    "displayName": "Lea faka-Tonga"
+  },
+  {
+    "tag": "fj",
+    "displayName": "Vosa Vakaviti"
+  },
+  {
+    "tag": "mg",
+    "displayName": "Malagasy"
+  },
+  {
+    "tag": "rw",
+    "displayName": "Ikinyarwanda"
+  },
+  {
+    "tag": "rn",
+    "displayName": "Ikirundi"
+  },
+  {
+    "tag": "ny",
+    "displayName": "Chichewa"
+  },
+  {
+    "tag": "sn",
+    "displayName": "chiShona"
+  },
+  {
+    "tag": "st",
+    "displayName": "Sesotho"
+  },
+  {
+    "tag": "tn",
+    "displayName": "Setswana"
+  },
+  {
+    "tag": "lg",
+    "displayName": "Luganda"
+  },
+  {
+    "tag": "ak",
+    "displayName": "Akan"
+  },
+  {
+    "tag": "ee",
+    "displayName": "Eʋegbe"
+  },
+  {
+    "tag": "wo",
+    "displayName": "Wolof"
+  },
+  {
+    "tag": "ff",
+    "displayName": "Fulfulde"
+  },
+  {
+    "tag": "br",
+    "displayName": "Brezhoneg"
+  },
+  {
+    "tag": "oc",
+    "displayName": "Occitan"
+  },
+  {
+    "tag": "lb",
+    "displayName": "Lëtzebuergesch"
+  },
+  {
+    "tag": "mt",
+    "displayName": "Malti"
+  }
+]

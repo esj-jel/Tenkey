@@ -5,24 +5,21 @@ plugins {
 
 android {
     namespace = "dev.localkeyboard"
-    compileSdk = 35
-
+    compileSdk = 36
     defaultConfig {
-        applicationId = "dev.localkeyboard"
+        applicationId = "dev.kotoba.grammar"
         minSdk = 26
-        targetSdk = 35
-        versionCode = 10002
-        versionName = "1.0.2"
+        targetSdk = 36
+        versionCode = 11000
+        versionName = "1.1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

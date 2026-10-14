@@ -14,5 +14,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "LocalKeyboard"
-include(":app")
+rootProject.name = "Kotoba"
+include(":grammar", ":widget")
+project(":grammar").projectDir = file("app")

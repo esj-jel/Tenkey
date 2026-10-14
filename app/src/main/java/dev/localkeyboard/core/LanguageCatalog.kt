@@ -2,8 +2,8 @@ package dev.localkeyboard.core
 
 data class KeyboardLanguage(val tag: String, val displayName: String)
 
+/** Offline language metadata. UI labels fall back to English; lessons are bundled for ja, yue, ko and zh. */
 object LanguageCatalog {
-    // Bundled metadata is offline-first. Dictionary files can be added under assets/dictionaries.
     val all: List<KeyboardLanguage> = listOf(
         KeyboardLanguage("ja", "日本語"),
         KeyboardLanguage("en", "English"),
@@ -59,7 +59,64 @@ object LanguageCatalog {
         KeyboardLanguage("pl", "Polski"),
         KeyboardLanguage("pt", "Português"),
         KeyboardLanguage("ro", "Română"),
-        KeyboardLanguage("ru", "Русский")
-    )
+        KeyboardLanguage("ru", "Русский"),
+        KeyboardLanguage("zh-Hans", "简体中文"),
+        KeyboardLanguage("zh-Hant", "繁體中文"),
+        KeyboardLanguage("yue", "粵語"),
+        KeyboardLanguage("sq", "Shqip"),
+        KeyboardLanguage("ur", "اردو"),
+        KeyboardLanguage("ta", "தமிழ்"),
+        KeyboardLanguage("te", "తెలుగు"),
+        KeyboardLanguage("th", "ไทย"),
+        KeyboardLanguage("tr", "Türkçe"),
+        KeyboardLanguage("uk", "Українська"),
+        KeyboardLanguage("uz", "Oʻzbekcha"),
+        KeyboardLanguage("vi", "Tiếng Việt"),
+        KeyboardLanguage("zu", "isiZulu"),
+        KeyboardLanguage("xh", "isiXhosa"),
+        KeyboardLanguage("yo", "Yorùbá"),
+        KeyboardLanguage("ig", "Asụsụ Igbo"),
+        KeyboardLanguage("ha", "Hausa"),
+        KeyboardLanguage("sw", "Kiswahili"),
+        KeyboardLanguage("so", "Soomaali"),
+        KeyboardLanguage("ps", "پښتو"),
+        KeyboardLanguage("pa", "ਪੰਜਾਬੀ"),
+        KeyboardLanguage("or", "ଓଡ଼ିଆ"),
+        KeyboardLanguage("my", "မြန်မာ"),
+        KeyboardLanguage("si", "සිංහල"),
+        KeyboardLanguage("sd", "سنڌي"),
+        KeyboardLanguage("ku", "Kurdî"),
+        KeyboardLanguage("ckb", "کوردیی ناوەندی"),
+        KeyboardLanguage("tg", "Тоҷикӣ"),
+        KeyboardLanguage("tk", "Türkmençe"),
+        KeyboardLanguage("ky", "Кыргызча"),
+        KeyboardLanguage("bo", "བོད་སྐད་"),
+        KeyboardLanguage("dz", "རྫོང་ཁ"),
+        KeyboardLanguage("jv", "Basa Jawa"),
+        KeyboardLanguage("su", "Basa Sunda"),
+        KeyboardLanguage("ceb", "Sinugboanong Binisaya"),
+        KeyboardLanguage("haw", "ʻŌlelo Hawaiʻi"),
+        KeyboardLanguage("mi", "Māori"),
+        KeyboardLanguage("sm", "Gagana Samoa"),
+        KeyboardLanguage("to", "Lea faka-Tonga"),
+        KeyboardLanguage("fj", "Vosa Vakaviti"),
+        KeyboardLanguage("mg", "Malagasy"),
+        KeyboardLanguage("rw", "Ikinyarwanda"),
+        KeyboardLanguage("rn", "Ikirundi"),
+        KeyboardLanguage("ny", "Chichewa"),
+        KeyboardLanguage("sn", "chiShona"),
+        KeyboardLanguage("st", "Sesotho"),
+        KeyboardLanguage("tn", "Setswana"),
+        KeyboardLanguage("lg", "Luganda"),
+        KeyboardLanguage("ak", "Akan"),
+        KeyboardLanguage("ee", "Eʋegbe"),
+        KeyboardLanguage("wo", "Wolof"),
+        KeyboardLanguage("ff", "Fulfulde"),
+        KeyboardLanguage("br", "Brezhoneg"),
+        KeyboardLanguage("oc", "Occitan"),
+        KeyboardLanguage("lb", "Lëtzebuergesch"),
+        KeyboardLanguage("mt", "Malti")
+    ).distinctBy { it.tag }
+
     val default = all.first { it.tag == "ja" }
 }
