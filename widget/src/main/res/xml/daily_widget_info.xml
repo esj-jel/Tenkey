@@ -4,7 +4,7 @@
     android:initialKeyguardLayout="@layout/daily_widget"
     android:initialLayout="@layout/daily_widget"
     android:minWidth="150dp"
-    android:minHeight="110dp"
+    android:minHeight="150dp"
     android:previewLayout="@layout/daily_widget"
     android:resizeMode="horizontal|vertical"
     android:targetCellWidth="2"

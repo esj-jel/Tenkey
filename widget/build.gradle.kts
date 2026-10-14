@@ -10,14 +10,15 @@ android {
         applicationId = "dev.tenkey.kotoba.widget"
         minSdk = 26
         targetSdk = 36
-        versionCode = 10000
-        versionName = "1.0.0"
+        versionCode = 12000
+        versionName = "1.2.0"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions { jvmTarget = "17" }
+    sourceSets { getByName("main").assets.srcDir("../shared") }
 }
 
 dependencies {

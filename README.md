@@ -1,58 +1,55 @@
-# Kotoba — Grammar and Widget
+# Tenkey — Kotoba Grammar + Kotoba Widget
 
-This repository contains two separate app products: **Kotoba Grammar** and **Kotoba Widget**. Their Android application IDs are `dev.kotoba.grammar` and `dev.tenkey.kotoba.widget`. The legacy Tenkey Japanese keyboard remains available inside Kotoba Grammar as an optional feature.
+Tenkey contains **two separate, offline-first language-learning apps**: **Kotoba Grammar** and **Kotoba Widget**. They have separate Android application IDs (`dev.kotoba.grammar` and `dev.tenkey.kotoba.widget`) and separate iOS app targets. The optional Tenkey Japanese keyboard remains in Kotoba Grammar.
 
-Kotoba is designed to work offline. Lesson cards, language labels and preferences are bundled or stored on-device; neither Android app declares Internet permission. There is no account or backend.
+No account, backend, analytics service, or network permission is required. Language labels, starter cards, and preferences are bundled or saved on-device.
 
-## Apps
+## Kotoba Grammar
 
-### Kotoba Grammar
+A standalone daily lesson app with a language picker, character/letter and word cards, translations, short explanations, and pronunciation readings. Character cards precede word cards in each bundled starter pack. Japanese cards include kana, kanji, and radical notes with readings in kana and romaji; Cantonese readings use Jyutping, Korean readings use romanization, and Chinese readings use Pinyin.
 
-A daily lesson screen with a language picker, character/word cards, translations, concise explanations, pronunciation guides, and a next-card action. The Japanese pack includes kana, kanji and radical notes, with readings shown in kana and romaji. Cantonese uses Jyutping, Korean uses Latin readings, and Chinese uses Pinyin.
+The picker has **111 language labels**, including Japanese, Cantonese, Korean, Simplified Chinese, and Traditional Chinese. 12 curated offline lesson packs are included: Japanese, Cantonese, Korean, Simplified and Traditional Chinese, English, Spanish, French, German, Italian, Portuguese, and Hindi. The remaining 99 selections use the Japanese starter pack as a transparent fallback; they are labels, not complete translated lesson packs.
 
-The catalog contains **111 selectable language labels**, including Japanese, Cantonese, Korean, and both Simplified and Traditional Chinese. This is catalog coverage, not 111 complete translation/lesson packs. The offline starter lesson packs are Japanese, Cantonese, Korean, Simplified Chinese and Traditional Chinese. Other language selections currently fall back to the Japanese starter content. Additional licensed offline content must be added before claiming full lesson support for those languages.
+## Kotoba Widget
 
-### Kotoba Widget
+A separate app that configures a transparent study widget. Android exposes a home-screen widget and declares the legacy keyguard category where the OS/OEM supports it. It shows the current new character or word, translation, explanation, and pronunciation. Tapping the card advances it. A runtime-only Android screen-on listener attempts to advance and refresh when the widget app process is alive; Android may stop that process, and Pixel, MagicOS, and other launchers do not guarantee third-party lock-screen widget placement or a refresh on every wake.
 
-A separate Android app that configures a transparent daily study widget. Its home-screen widget can be added from the Android widget picker; the provider opts into the keyguard category where an OS/OEM supports it. A runtime-only screen-on listener attempts to advance and refresh the card while the app process is alive. Android can stop the process and does not guarantee lock-screen widgets or wake-time refresh on every device, including Pixel and MagicOS. The widget also has a manual next-card tap and a periodic refresh request.
-
-The iOS WidgetKit extension declares Lock Screen accessory and Home Screen families. WidgetKit controls when timelines refresh, so neither platform guarantees a new lesson on every device wake. The daily timeline is the supported offline baseline.
+The iOS WidgetKit extension provides Lock Screen accessory and Home Screen families with a clear widget background. iOS controls WidgetKit timeline refreshes and does not expose a reliable every-unlock callback to widgets, so new lessons are scheduled daily (with manual refresh from Kotoba Widget), not guaranteed on every screen wake.
 
 ## Appearance and platform targets
 
-- Android modules compile and target SDK 36 (Android 16); minimum Android version is 8.0 / API 26.
-- Material 3 dynamic colors are used where available. Compatibility with MagicOS 10 and other OEM distributions is best-effort and needs real-device validation.
-- iOS source targets iOS 16 and conditionally uses the iOS 26+ Glass effect, falling back to system material on older releases. An iOS 27 SDK/Xcode build and device test are not available in this Linux environment.
-- The transparent widget surface lets the host wallpaper/system show through where the widget framework allows it.
+- Android modules compile/target **API 36 (Android 16)** and support Android 8.0 / API 26 and later. Material 3 dynamic colors are used for app screens; widget content remains transparent so the host surface shows through.
+- MagicOS 10.0.0 behavior is best-effort and requires testing on a real Honor device/launcher. Lock-screen widget support depends on the OS and OEM.
+- iOS apps target **iOS 16 and later**. Kotoba Grammar uses system materials and conditionally applies Liquid Glass on iOS 26 and later. iOS 27 SDK/runtime compatibility needs validation with the corresponding Apple Xcode release and devices.
+- `branding/kotoba.svg` is the scalable brand icon source. Platform icon assets are packaged separately for Android/iOS.
 
 ## Build Android locally
 
-Install JDK 17+, Android SDK Platform 36, Android Build Tools 36.0.0 and Platform Tools. Then run:
+Install JDK 17+, Android SDK Platform 36, Android Build Tools 36.0.0, and Platform Tools. Then run from the repository root:
 
 ```bash
 ./gradlew :grammar:testDebugUnitTest :grammar:lintDebug :grammar:assembleDebug
 ./gradlew :widget:lintDebug :widget:assembleDebug
 ```
 
-APK outputs:
+Debug APK outputs are signed with the local Android debug key for testing, not production release. The APKs are created at:
 
 ```text
 app/build/outputs/apk/debug/grammar-debug.apk
 widget/build/outputs/apk/debug/widget-debug.apk
 ```
 
-Install with:
-
+A public production update should use a stable owner-controlled release-signing key.
 ```bash
 adb install -r app/build/outputs/apk/debug/grammar-debug.apk
 adb install -r widget/build/outputs/apk/debug/widget-debug.apk
 ```
 
-Open **Kotoba Grammar**, then **Open daily grammar lesson**. The keyboard can be enabled under Android Settings → System → Keyboard. Open **Kotoba Widget**, choose a lesson language, and add its widget from the launcher's widget picker. Lock-screen placement is conditional on device software.
+Open **Kotoba Grammar** and tap **Open daily grammar lesson**. The keyboard is optional and can be enabled from Android system keyboard settings. In **Kotoba Widget**, choose a language and add the widget through the launcher's widget picker. Lock-screen placement depends on the OS/OEM.
 
 ## Build iOS locally on macOS
 
-The iOS sources define separate **KotobaGrammar** and **KotobaWidget** apps plus a WidgetKit lock-screen extension. Generate the Xcode project with XcodeGen, then archive and export each app with a valid Apple signing team/profile:
+Requires macOS, Xcode, XcodeGen, an Apple development team, and matching App Group provisioning for `group.dev.tenkey.kotoba`. From the repository root:
 
 ```bash
 cd ios
@@ -61,8 +58,8 @@ xcodebuild -project Kotoba.xcodeproj -scheme KotobaGrammar -configuration Releas
 xcodebuild -project Kotoba.xcodeproj -scheme KotobaWidget -configuration Release -sdk iphoneos -archivePath build/KotobaWidget.xcarchive archive
 ```
 
-An `.ipa` requires macOS/Xcode and code signing. No `.ipa` is included from this Linux build environment. An iOS simulator, Android emulator, MagicOS device and iPhone are not available here, so the source has not been device-tested.
+Export each archive as an `.ipa` in Xcode or with `xcodebuild -exportArchive` and a valid export-options plist. This Linux workspace cannot run Xcode or produce a signed, installable iOS `.ipa`; no iOS emulator/device or Apple signing assets are available here. The iOS project source and build configuration are included for local macOS builds.
 
-## Brand icon
+## Testing and release notes
 
-The scalable vector icon source is [`branding/kotoba.svg`](branding/kotoba.svg).
+Run the Android unit tests, lint, and APK assembly commands above. No Android emulator, Pixel/MagicOS device, or Apple simulator is available in this workspace, so device-specific lock-screen placement and wake refresh still need real-device validation. See [RELEASE_NOTES_v1.2.0.md](RELEASE_NOTES_v1.2.0.md) for this project update.

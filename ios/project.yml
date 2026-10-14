@@ -6,6 +6,8 @@ options:
 settings:
   base:
     SWIFT_VERSION: 5.9
+    MARKETING_VERSION: 1.2.0
+    CURRENT_PROJECT_VERSION: 12000
     IPHONEOS_DEPLOYMENT_TARGET: 16.0
     TARGETED_DEVICE_FAMILY: "1,2"
 targets:
@@ -30,6 +32,9 @@ targets:
     platform: iOS
     sources:
       - path: KotobaWidgetApp
+      - path: ../shared/LanguageCatalog.swift
+      - path: ../shared/languages.json
+        buildPhase: resources
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: dev.tenkey.kotoba.widget

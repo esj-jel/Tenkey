@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Local Keyboard</string>
+    <string name="app_name">Kotoba Grammar</string>
     <string name="ime_subtype_hiragana">Japanese Hiragana</string>
     <string name="ime_subtype_katakana">Japanese Katakana</string>
 </resources>

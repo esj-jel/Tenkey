@@ -34,7 +34,12 @@ struct KotobaLockWidgetView: View {
             } else {
                 Text(entry.card.written).font(.system(size: family == .accessoryCircular ? 27 : 35, weight: .semibold, design: .rounded)).lineLimit(1).minimumScaleFactor(0.6)
                 Text(entry.card.translation).font(.system(size: 13, weight: .medium)).lineLimit(1)
-                if family != .accessoryCircular { Text(entry.card.pronunciation).font(.system(size: 11)).opacity(0.83).lineLimit(1) }
+                if family != .accessoryCircular {
+                    Text(entry.card.pronunciation).font(.system(size: 11)).opacity(0.83).lineLimit(1)
+                    if family == .accessoryRectangular || family == .systemSmall || family == .systemMedium {
+                        Text(entry.card.explanation).font(.system(size: 9)).opacity(0.76).lineLimit(2)
+                    }
+                }
             }
         }.foregroundStyle(.primary)
         if #available(iOSApplicationExtension 17.0, *) {

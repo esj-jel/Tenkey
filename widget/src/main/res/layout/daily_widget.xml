@@ -34,12 +34,21 @@
         android:textColor="#FFF8F5FF"
         android:textSize="14sp" />
     <TextView
+        android:id="@+id/widget_explanation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="A kanji meaning sun or day."
+        android:textColor="#FFEFE6FF"
+        android:textSize="11sp" />
+    <TextView
         android:id="@+id/widget_pronunciation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="1"
-        android:text="nichi"
+        android:text="nichi · hi"
         android:textColor="#FFEFE6FF"
         android:textSize="12sp" />
 </LinearLayout>
